@@ -1,7 +1,7 @@
 {
   "date": "2026-04-17",
-  "captured_at": "2026-04-17T08:51:12.220Z",
-  "overall_status": "ok",
+  "captured_at": "2026-04-17T16:15:29.465Z",
+  "overall_status": "degraded",
   "sources": {
     "github": {
       "status": "ok",
@@ -12,8 +12,8 @@
       "count": 1
     },
     "producthunt": {
-      "status": "ok",
-      "count": 1
+      "status": "unavailable",
+      "count": 0
     }
   },
   "report_path": null

@@ -51,13 +51,36 @@ function normalizeProductHuntItem(item) {
   };
 }
 
-async function runProvider(date, outputFile) {
+function buildCookieFilePayload(sessionValue) {
+  return JSON.stringify([
+    {
+      name: "_producthunt_session_production",
+      value: sessionValue,
+      domain: ".producthunt.com",
+      path: "/",
+      secure: true,
+      httpOnly: true,
+      sameSite: "Lax"
+    }
+  ], null, 2);
+}
+
+async function createTemporaryCookieFile(date) {
+  const sessionValue = process.env.PRODUCT_HUNT_SESSION;
+  if (!sessionValue) return null;
+
+  const filePath = path.join(process.cwd(), "data", date, "producthunt-session-cookie.json");
+  await fs.writeFile(filePath, buildCookieFilePayload(sessionValue), "utf8");
+  return filePath;
+}
+
+async function runProvider(date, outputFile, cookieFilePath) {
   return new Promise((resolve) => {
     const scriptPath = path.join(process.cwd(), "scripts", "producthunt_provider.mjs");
     const args = [scriptPath, "--date", date, "--output-file", outputFile];
 
-    if (process.env.PRODUCT_HUNT_COOKIE_FILE) {
-      args.push("--cookie-file", process.env.PRODUCT_HUNT_COOKIE_FILE);
+    if (cookieFilePath) {
+      args.push("--cookie-file", cookieFilePath);
     }
 
     const proc = spawn("node", args, {
@@ -88,16 +111,17 @@ async function runProvider(date, outputFile) {
 
 export async function generateProductHunt(date) {
   const normalizedDate = normalizeDate(date);
-  const hasCookieFile = Boolean(process.env.PRODUCT_HUNT_COOKIE_FILE);
+  const hasSession = Boolean(process.env.PRODUCT_HUNT_SESSION);
 
-  if (!hasCookieFile) {
+  if (!hasSession) {
     return emptyProductHuntExport(normalizedDate, "unavailable", [
-      "PRODUCT_HUNT_COOKIE_FILE is not configured"
+      "PRODUCT_HUNT_SESSION is not configured"
     ]);
   }
 
   const outputFile = path.join(process.cwd(), "data", normalizedDate, "producthunt-raw.json");
-  const result = await runProvider(normalizedDate, outputFile);
+  const cookieFilePath = await createTemporaryCookieFile(normalizedDate);
+  const result = await runProvider(normalizedDate, outputFile, cookieFilePath);
 
   try {
     const raw = await fs.readFile(outputFile, "utf8");
@@ -133,5 +157,8 @@ export async function generateProductHunt(date) {
     return emptyProductHuntExport(normalizedDate, "unavailable", baseNotes);
   } finally {
     await fs.rm(outputFile, { force: true }).catch(() => {});
+    if (cookieFilePath) {
+      await fs.rm(cookieFilePath, { force: true }).catch(() => {});
+    }
   }
 }

@@ -1,9 +1,12 @@
 const GITHUB_API_BASE = "https://api.github.com";
-const SEARCH_KEYWORDS = [
+const PRIMARY_QUERY_TERMS = [
   'agent',
   'llm',
   'rag',
-  'gpt',
+  'gpt'
+];
+const SECONDARY_AI_TERMS = [
+  'ai',
   'claude',
   'diffusion',
   'multimodal',
@@ -24,8 +27,14 @@ function nowIso() {
 }
 
 function buildSearchQuery(date) {
-  const keywordQuery = SEARCH_KEYWORDS.map((term) => `${term} in:name,description,readme`).join(' OR ');
+  const keywordQuery = PRIMARY_QUERY_TERMS.map((term) => `${term} in:name,description`).join(' OR ');
   return `(${keywordQuery}) created:>=${date} fork:false archived:false`;
+}
+
+function hasAiSignal(repo) {
+  const haystack = `${repo.name} ${repo.description || ''}`.toLowerCase();
+  return SECONDARY_AI_TERMS.some((term) => haystack.includes(term))
+    || PRIMARY_QUERY_TERMS.some((term) => haystack.includes(term));
 }
 
 function isExcluded(repo) {
@@ -106,6 +115,7 @@ export async function generateGithub(date) {
     const payload = await fetchSearchResults(date, token);
     const repos = Array.isArray(payload.items) ? payload.items : [];
     const filtered = repos
+      .filter((repo) => hasAiSignal(repo))
       .filter((repo) => !isExcluded(repo))
       .slice(0, 10)
       .map(normalizeRepo);

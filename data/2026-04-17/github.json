@@ -1,34 +1,11 @@
 {
   "source": "github",
   "date": "2026-04-17",
-  "captured_at": "2026-04-17T02:07:16.834Z",
-  "status": "ok",
-  "count": 1,
+  "captured_at": "2026-04-17T06:42:17.184Z",
+  "status": "unavailable",
+  "count": 0,
   "notes": [
-    "mock data for bootstrap"
+    "GitHub search failed: HTTP 422 {\"message\":\"Validation Failed\",\"errors\":[{\"message\":\"More than five AND / OR / NOT operators were used.\",\"resource\":\"Search\",\"field\":\"q\",\"code\":\"invalid\"}],\"documentation_url\":\"https://docs.github.com/v3/search/\",\"status\":\"422\"}"
   ],
-  "items": [
-    {
-      "source_id": "example/ai-repo",
-      "name": "AI Repo Example",
-      "tagline": "一个用于验证 launch radar feed 链路的示例 GitHub 项目",
-      "url": "https://github.com/example/ai-repo",
-      "website_url": null,
-      "rank": null,
-      "score": 120,
-      "comments": null,
-      "stars": 120,
-      "replies": null,
-      "created_at": "2026-04-17T08:00:00Z",
-      "launched_at": null,
-      "topics": [
-        "ai",
-        "agent",
-        "demo"
-      ],
-      "raw_ref": {
-        "mock": true
-      }
-    }
-  ]
+  "items": []
 }

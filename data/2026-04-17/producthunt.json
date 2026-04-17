@@ -1,0 +1,34 @@
+{
+  "source": "producthunt",
+  "date": "2026-04-17",
+  "captured_at": "2026-04-17T02:07:16.834Z",
+  "status": "ok",
+  "count": 1,
+  "notes": [
+    "mock data for bootstrap"
+  ],
+  "items": [
+    {
+      "source_id": "ph-001",
+      "name": "Launch Radar Demo",
+      "tagline": "AI launch discovery for builders and writers",
+      "url": "https://www.producthunt.com/posts/launch-radar-demo",
+      "website_url": "https://example.com",
+      "rank": 7,
+      "score": 168,
+      "comments": 22,
+      "stars": null,
+      "replies": null,
+      "created_at": null,
+      "launched_at": "2026-04-17T00:00:00Z",
+      "topics": [
+        "ai",
+        "discovery",
+        "productivity"
+      ],
+      "raw_ref": {
+        "mock": true
+      }
+    }
+  ]
+}

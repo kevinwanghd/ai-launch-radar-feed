@@ -1,0 +1,8 @@
+{
+  "name": "ai-launch-radar-feed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-all.js"
+  }
+}

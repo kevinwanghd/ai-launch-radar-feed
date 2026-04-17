@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { generateGithub } from "./generate-github.js";
+import { generateProductHunt } from "./generate-producthunt.js";
 
 function todayDate() {
   return new Date().toISOString().slice(0, 10);
@@ -53,37 +54,6 @@ async function generateX(date) {
         created_at: `${date}T09:30:00Z`,
         launched_at: `${date}T09:30:00Z`,
         topics: ["launch", "workflow", "assistant"],
-        raw_ref: {
-          mock: true
-        }
-      }
-    ]
-  };
-}
-
-async function generateProductHunt(date) {
-  return {
-    source: "producthunt",
-    date,
-    captured_at: nowIso(),
-    status: "ok",
-    count: 1,
-    notes: ["mock data for bootstrap"],
-    items: [
-      {
-        source_id: "ph-001",
-        name: "Launch Radar Demo",
-        tagline: "AI launch discovery for builders and writers",
-        url: "https://www.producthunt.com/posts/launch-radar-demo",
-        website_url: "https://example.com",
-        rank: 7,
-        score: 168,
-        comments: 22,
-        stars: null,
-        replies: null,
-        created_at: null,
-        launched_at: `${date}T00:00:00Z`,
-        topics: ["ai", "discovery", "productivity"],
         raw_ref: {
           mock: true
         }

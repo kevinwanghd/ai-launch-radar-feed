@@ -21,6 +21,7 @@ jobs:
       - name: Generate feed
         env:
           GITHUB_TOKEN: ${{ secrets.AI_LAUNCH_RADAR_GH_TOKEN }}
+          PRODUCT_HUNT_SESSION: ${{ secrets.PRODUCT_HUNT_SESSION }}
         run: npm run generate
 
       - name: Commit and push feed

@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { generateGithub } from "./generate-github.js";
 
 function todayDate() {
   return new Date().toISOString().slice(0, 10);
@@ -26,37 +27,6 @@ function emptySourceExport(source, date, notes = []) {
     count: 0,
     notes,
     items: [],
-  };
-}
-
-async function generateGithub(date) {
-  return {
-    source: "github",
-    date,
-    captured_at: nowIso(),
-    status: "ok",
-    count: 1,
-    notes: ["mock data for bootstrap"],
-    items: [
-      {
-        source_id: "example/ai-repo",
-        name: "AI Repo Example",
-        tagline: "一个用于验证 launch radar feed 链路的示例 GitHub 项目",
-        url: "https://github.com/example/ai-repo",
-        website_url: null,
-        rank: null,
-        score: 120,
-        comments: null,
-        stars: 120,
-        replies: null,
-        created_at: `${date}T08:00:00Z`,
-        launched_at: null,
-        topics: ["ai", "agent", "demo"],
-        raw_ref: {
-          mock: true
-        }
-      }
-    ]
   };
 }
 

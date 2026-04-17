@@ -1,11 +1,12 @@
 {
   "source": "producthunt",
   "date": "2026-04-17",
-  "captured_at": "2026-04-17T16:15:29.465Z",
+  "captured_at": "2026-04-17T16:42:58.983Z",
   "status": "unavailable",
   "count": 0,
   "notes": [
-    "PRODUCT_HUNT_COOKIE_FILE is not configured"
+    "Product Hunt HTML requires browser capture.",
+    "reason_code:ph_html_browser_capture_required"
   ],
   "items": []
 }

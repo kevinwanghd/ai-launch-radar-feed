@@ -1,11 +1,11 @@
 {
   "date": "2026-04-17",
-  "captured_at": "2026-04-17T06:42:17.184Z",
-  "overall_status": "degraded",
+  "captured_at": "2026-04-17T07:01:54.755Z",
+  "overall_status": "ok",
   "sources": {
     "github": {
-      "status": "unavailable",
-      "count": 0
+      "status": "ok",
+      "count": 10
     },
     "x": {
       "status": "ok",

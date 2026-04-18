@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { generateGithub } from "./generate-github.js";
 import { generateProductHunt } from "./generate-producthunt.js";
+import { generateX } from "./generate-x.js";
 
 function todayDate() {
   return new Date().toISOString().slice(0, 10);
@@ -28,37 +29,6 @@ function emptySourceExport(source, date, notes = []) {
     count: 0,
     notes,
     items: [],
-  };
-}
-
-async function generateX(date) {
-  return {
-    source: "x",
-    date,
-    captured_at: nowIso(),
-    status: "ok",
-    count: 1,
-    notes: ["mock data for bootstrap"],
-    items: [
-      {
-        source_id: "tweet-001",
-        name: "Agent Launch Example",
-        tagline: "We just launched our AI workflow assistant. Feedback welcome.",
-        url: "https://x.com/example/status/1234567890",
-        website_url: "https://example.com",
-        rank: null,
-        score: 85,
-        comments: null,
-        stars: null,
-        replies: 14,
-        created_at: `${date}T09:30:00Z`,
-        launched_at: `${date}T09:30:00Z`,
-        topics: ["launch", "workflow", "assistant"],
-        raw_ref: {
-          mock: true
-        }
-      }
-    ]
   };
 }
 

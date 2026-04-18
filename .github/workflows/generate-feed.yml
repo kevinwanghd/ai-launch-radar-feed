@@ -18,6 +18,13 @@ jobs:
         with:
           node-version: "20"
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install X search dependencies
+        run: python -m pip install twscrape curl_cffi beautifulsoup4 fake_useragent aiosqlite
+
       - name: Generate feed
         env:
           GITHUB_TOKEN: ${{ secrets.AI_LAUNCH_RADAR_GH_TOKEN }}

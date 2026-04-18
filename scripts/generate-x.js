@@ -83,10 +83,42 @@ function normalizeTweet(tweet) {
   };
 }
 
+async function detectPythonCommand() {
+  const candidates = ["python", "python3"];
+
+  for (const cmd of candidates) {
+    const result = await new Promise((resolve) => {
+      const proc = spawn(cmd, ["--version"], { stdio: ["ignore", "pipe", "pipe"] });
+      let stdout = "";
+      let stderr = "";
+
+      proc.stdout.on("data", (data) => {
+        stdout += data.toString();
+      });
+      proc.stderr.on("data", (data) => {
+        stderr += data.toString();
+      });
+      proc.on("close", (code) => resolve({ code, stdout, stderr }));
+      proc.on("error", () => resolve({ code: 1, stdout: "", stderr: "" }));
+    });
+
+    if (result.code === 0) {
+      return cmd;
+    }
+  }
+
+  return null;
+}
+
 async function runXSearch(query) {
+  const pythonCmd = await detectPythonCommand();
+  if (!pythonCmd) {
+    return { code: 1, stdout: "", stderr: "python executable not found" };
+  }
+
   return new Promise((resolve) => {
     const scriptPath = path.join(process.cwd(), "scripts", "x_search.py");
-    const proc = spawn("python", [scriptPath, query, "20"], {
+    const proc = spawn(pythonCmd, [scriptPath, query, "20"], {
       stdio: ["ignore", "pipe", "pipe"],
       env: process.env,
     });
@@ -134,7 +166,11 @@ export async function generateX(date) {
   for (const query of SEARCH_QUERIES) {
     const result = await runXSearch(query);
     if (result.code !== 0) {
-      if (result.stderr) notes.push(result.stderr.trim().split("\n")[0]);
+      if (result.stderr) {
+        notes.push(result.stderr.trim().split("\n").slice(0, 3).join(" | "));
+      } else {
+        notes.push(`x_search failed for query \"${query}\" with exit code ${result.code}`);
+      }
       continue;
     }
 

@@ -8,6 +8,7 @@ const SEARCH_QUERIES = [
   "now live AI",
   "built this AI"
 ];
+const QUERY_TIMEOUT_MS = 90 * 1000;
 
 function nowIso() {
   return new Date().toISOString();
@@ -113,7 +114,7 @@ async function detectPythonCommand() {
 async function runXSearch(query) {
   const pythonCmd = await detectPythonCommand();
   if (!pythonCmd) {
-    return { code: 1, stdout: "", stderr: "python executable not found" };
+    return { code: 1, stdout: "", stderr: "python executable not found", timedOut: false };
   }
 
   return new Promise((resolve) => {
@@ -125,6 +126,14 @@ async function runXSearch(query) {
 
     let stdout = "";
     let stderr = "";
+    let settled = false;
+
+    const timeout = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      proc.kill("SIGKILL");
+      resolve({ code: 124, stdout, stderr, timedOut: true });
+    }, QUERY_TIMEOUT_MS);
 
     proc.stdout.on("data", (data) => {
       stdout += data.toString();
@@ -135,11 +144,17 @@ async function runXSearch(query) {
     });
 
     proc.on("close", (code) => {
-      resolve({ code, stdout, stderr });
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      resolve({ code, stdout, stderr, timedOut: false });
     });
 
     proc.on("error", (error) => {
-      resolve({ code: 1, stdout: "", stderr: error.message });
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      resolve({ code: 1, stdout: "", stderr: error.message, timedOut: false });
     });
   });
 }
@@ -164,21 +179,33 @@ export async function generateX(date) {
   const notes = [];
 
   for (const query of SEARCH_QUERIES) {
+    notes.push(`query:start:${query}`);
     const result = await runXSearch(query);
+
+    if (result.timedOut) {
+      notes.push(`query:timeout:${query}`);
+      if (result.stderr) {
+        notes.push(result.stderr.trim().split("\n").slice(0, 3).join(" | "));
+      }
+      continue;
+    }
+
     if (result.code !== 0) {
+      notes.push(`query:exit:${query}:${result.code}`);
       if (result.stderr) {
         notes.push(result.stderr.trim().split("\n").slice(0, 3).join(" | "));
       } else {
-        notes.push(`x_search failed for query \"${query}\" with exit code ${result.code}`);
+        notes.push(`x_search failed for query "${query}" with exit code ${result.code}`);
       }
       continue;
     }
 
     try {
       const tweets = parseTweetsFromStdout(result.stdout);
+      notes.push(`query:ok:${query}:${tweets.length}`);
       allTweets.push(...tweets);
     } catch (error) {
-      notes.push(`failed to parse X search output for query \"${query}\": ${error.message}`);
+      notes.push(`query:parse_error:${query}:${error.message}`);
     }
   }
 

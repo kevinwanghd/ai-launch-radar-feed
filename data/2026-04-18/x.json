@@ -1,22 +1,16 @@
 {
   "source": "x",
   "date": "2026-04-18",
-  "captured_at": "2026-04-18T12:57:30.521Z",
+  "captured_at": "2026-04-18T14:24:01.748Z",
   "status": "degraded",
   "count": 0,
   "notes": [
     "query:start:just launched AI",
-    "query:timeout:just launched AI",
-    "\u001b[32m2026-04-18 12:51:30.938\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-18 12:51:30.941\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-18 12:51:30.945\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
-    "query:start:we launched AI",
-    "query:timeout:we launched AI",
-    "\u001b[32m2026-04-18 12:53:00.556\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-18 12:53:00.559\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-18 12:53:00.563\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
-    "query:start:now live AI",
-    "query:timeout:now live AI",
-    "\u001b[32m2026-04-18 12:54:30.628\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-18 12:54:30.631\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-18 12:54:30.635\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
+    "query:timeout:search_runtime:just launched AI",
+    "\u001b[32m2026-04-18 14:22:32.358\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-18 14:22:32.362\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-18 14:22:32.365\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
     "query:start:built this AI",
-    "query:timeout:built this AI",
-    "\u001b[32m2026-04-18 12:56:00.725\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-18 12:56:00.728\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-18 12:56:00.731\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
+    "query:timeout:search_runtime:built this AI",
+    "\u001b[32m2026-04-18 14:23:16.938\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-18 14:23:16.941\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-18 14:23:16.944\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
     "No trustworthy launch-intent tweets found"
   ],
   "items": []

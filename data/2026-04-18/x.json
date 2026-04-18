@@ -1,11 +1,15 @@
 {
   "source": "x",
   "date": "2026-04-18",
-  "captured_at": "2026-04-18T07:18:33.475Z",
-  "status": "unavailable",
+  "captured_at": "2026-04-18T10:08:00.586Z",
+  "status": "degraded",
   "count": 0,
   "notes": [
-    "X_AUTH_TOKEN and X_CT0 are not configured"
+    "Traceback (most recent call last):",
+    "Traceback (most recent call last):",
+    "Traceback (most recent call last):",
+    "Traceback (most recent call last):",
+    "No trustworthy launch-intent tweets found"
   ],
   "items": []
 }

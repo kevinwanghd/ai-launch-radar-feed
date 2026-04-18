@@ -1,6 +1,6 @@
 {
   "date": "2026-04-18",
-  "captured_at": "2026-04-18T07:18:34.360Z",
+  "captured_at": "2026-04-18T10:08:01.137Z",
   "overall_status": "degraded",
   "sources": {
     "github": {
@@ -8,7 +8,7 @@
       "count": 10
     },
     "x": {
-      "status": "unavailable",
+      "status": "degraded",
       "count": 0
     },
     "producthunt": {

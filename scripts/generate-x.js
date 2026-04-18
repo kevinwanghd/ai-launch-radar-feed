@@ -4,11 +4,9 @@ import path from "node:path";
 const FEED_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const SEARCH_QUERIES = [
   "just launched AI",
-  "we launched AI",
-  "now live AI",
   "built this AI"
 ];
-const QUERY_TIMEOUT_MS = 90 * 1000;
+const QUERY_TIMEOUT_MS = 45 * 1000;
 
 function nowIso() {
   return new Date().toISOString();
@@ -114,7 +112,7 @@ async function detectPythonCommand() {
 async function runXSearch(query) {
   const pythonCmd = await detectPythonCommand();
   if (!pythonCmd) {
-    return { code: 1, stdout: "", stderr: "python executable not found", timedOut: false };
+    return { code: 1, stdout: "", stderr: "python executable not found", timedOut: false, stage: "python_lookup" };
   }
 
   return new Promise((resolve) => {
@@ -132,7 +130,7 @@ async function runXSearch(query) {
       if (settled) return;
       settled = true;
       proc.kill("SIGKILL");
-      resolve({ code: 124, stdout, stderr, timedOut: true });
+      resolve({ code: 124, stdout, stderr, timedOut: true, stage: "search_runtime" });
     }, QUERY_TIMEOUT_MS);
 
     proc.stdout.on("data", (data) => {
@@ -147,14 +145,14 @@ async function runXSearch(query) {
       if (settled) return;
       settled = true;
       clearTimeout(timeout);
-      resolve({ code, stdout, stderr, timedOut: false });
+      resolve({ code, stdout, stderr, timedOut: false, stage: "completed" });
     });
 
     proc.on("error", (error) => {
       if (settled) return;
       settled = true;
       clearTimeout(timeout);
-      resolve({ code: 1, stdout: "", stderr: error.message, timedOut: false });
+      resolve({ code: 1, stdout: "", stderr: error.message, timedOut: false, stage: "process_spawn" });
     });
   });
 }
@@ -183,7 +181,7 @@ export async function generateX(date) {
     const result = await runXSearch(query);
 
     if (result.timedOut) {
-      notes.push(`query:timeout:${query}`);
+      notes.push(`query:timeout:${result.stage}:${query}`);
       if (result.stderr) {
         notes.push(result.stderr.trim().split("\n").slice(0, 3).join(" | "));
       }
@@ -191,7 +189,7 @@ export async function generateX(date) {
     }
 
     if (result.code !== 0) {
-      notes.push(`query:exit:${query}:${result.code}`);
+      notes.push(`query:exit:${result.stage}:${query}:${result.code}`);
       if (result.stderr) {
         notes.push(result.stderr.trim().split("\n").slice(0, 3).join(" | "));
       } else {
@@ -204,6 +202,17 @@ export async function generateX(date) {
       const tweets = parseTweetsFromStdout(result.stdout);
       notes.push(`query:ok:${query}:${tweets.length}`);
       allTweets.push(...tweets);
+
+      const byId = new Map();
+      for (const tweet of allTweets) {
+        if (!isCredibleLaunchTweet(tweet)) continue;
+        byId.set(String(tweet.id), tweet);
+      }
+
+      if (byId.size > 0) {
+        notes.push(`query:early_stop:${query}:${byId.size}`);
+        break;
+      }
     } catch (error) {
       notes.push(`query:parse_error:${query}:${error.message}`);
     }

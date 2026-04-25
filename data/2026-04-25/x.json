@@ -1,0 +1,17 @@
+{
+  "source": "x",
+  "date": "2026-04-25",
+  "captured_at": "2026-04-25T07:39:52.684Z",
+  "status": "degraded",
+  "count": 0,
+  "notes": [
+    "query:start:just launched AI",
+    "query:timeout:search_runtime:just launched AI",
+    "\u001b[32m2026-04-25 07:38:23.685\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-25 07:38:23.689\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-25 07:38:23.693\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
+    "query:start:built this AI",
+    "query:timeout:search_runtime:built this AI",
+    "\u001b[32m2026-04-25 07:39:07.916\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v1\u001b[0m | \u001b[32m2026-04-25 07:39:07.920\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v2\u001b[0m | \u001b[32m2026-04-25 07:39:07.923\u001b[0m | \u001b[1mINFO    \u001b[0m | \u001b[36mtwscrape.db\u001b[0m:\u001b[36mmigrate\u001b[0m:\u001b[36m96\u001b[0m - \u001b[1mRunning migration to v3\u001b[0m",
+    "No trustworthy launch-intent tweets found"
+  ],
+  "items": []
+}

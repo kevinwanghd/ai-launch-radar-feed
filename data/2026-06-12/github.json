@@ -1,0 +1,282 @@
+{
+  "source": "github",
+  "date": "2026-06-12",
+  "captured_at": "2026-06-12T10:23:36.381Z",
+  "status": "ok",
+  "count": 10,
+  "notes": [],
+  "items": [
+    {
+      "source_id": "DietrichGebert/ponytail",
+      "name": "ponytail",
+      "tagline": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "website_url": null,
+      "rank": null,
+      "score": 384,
+      "comments": null,
+      "stars": 384,
+      "replies": null,
+      "created_at": "2026-06-12T00:52:37Z",
+      "launched_at": null,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "cursor-rules",
+        "developer-tools",
+        "llm",
+        "prompt-engineering",
+        "yagni"
+      ],
+      "raw_ref": {
+        "full_name": "DietrichGebert/ponytail",
+        "language": "JavaScript",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T10:18:37Z",
+        "stargazers_count": 384,
+        "watchers_count": 384,
+        "open_issues_count": 1
+      }
+    },
+    {
+      "source_id": "bozhouDev/xhs-article-to-images",
+      "name": "xhs-article-to-images",
+      "tagline": "Agent-assisted Markdown article to Xiaohongshu image cards workflow",
+      "url": "https://github.com/bozhouDev/xhs-article-to-images",
+      "website_url": null,
+      "rank": null,
+      "score": 30,
+      "comments": null,
+      "stars": 30,
+      "replies": null,
+      "created_at": "2026-06-12T02:26:39Z",
+      "launched_at": null,
+      "topics": [],
+      "raw_ref": {
+        "full_name": "bozhouDev/xhs-article-to-images",
+        "language": "CSS",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T02:37:00Z",
+        "stargazers_count": 30,
+        "watchers_count": 30,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "dzh-gitcode/dify-workflows",
+      "name": "dify-workflows",
+      "tagline": "一个精心整理的 Dify 工作流模板集合，涵盖翻译、图像生成、知识库、代码开发、数据分析、内容创作、Agent 智能体等多个领域",
+      "url": "https://github.com/dzh-gitcode/dify-workflows",
+      "website_url": null,
+      "rank": null,
+      "score": 14,
+      "comments": null,
+      "stars": 14,
+      "replies": null,
+      "created_at": "2026-06-12T01:07:25Z",
+      "launched_at": null,
+      "topics": [],
+      "raw_ref": {
+        "full_name": "dzh-gitcode/dify-workflows",
+        "language": "Python",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T01:07:35Z",
+        "stargazers_count": 14,
+        "watchers_count": 14,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "HughYau/anti-fable",
+      "name": "anti-fable",
+      "tagline": "要用Fable打败Fable。Bypass LLM safety shackles for frontier research using allegorical structural mapping.",
+      "url": "https://github.com/HughYau/anti-fable",
+      "website_url": null,
+      "rank": null,
+      "score": 10,
+      "comments": null,
+      "stars": 10,
+      "replies": null,
+      "created_at": "2026-06-12T07:25:15Z",
+      "launched_at": null,
+      "topics": [
+        "llm-tools",
+        "research-tool",
+        "skills"
+      ],
+      "raw_ref": {
+        "full_name": "HughYau/anti-fable",
+        "language": null,
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T07:36:00Z",
+        "stargazers_count": 10,
+        "watchers_count": 10,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "puppi3s/mythos-anti-sabotage-guardrails",
+      "name": "mythos-anti-sabotage-guardrails",
+      "tagline": "Vendor-neutral integrity guardrails for autonomous agents and IDE harnesses.",
+      "url": "https://github.com/puppi3s/mythos-anti-sabotage-guardrails",
+      "website_url": null,
+      "rank": null,
+      "score": 5,
+      "comments": null,
+      "stars": 5,
+      "replies": null,
+      "created_at": "2026-06-12T02:53:47Z",
+      "launched_at": null,
+      "topics": [],
+      "raw_ref": {
+        "full_name": "puppi3s/mythos-anti-sabotage-guardrails",
+        "language": null,
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T05:32:48Z",
+        "stargazers_count": 5,
+        "watchers_count": 5,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "VoidLight00/deo-harness",
+      "name": "deo-harness",
+      "tagline": "Dynamic Effort Orchestration — a Claude Code + Fable 5 harness that assigns each sub-agent the effort level its task deserves. Zero Opus fallback.",
+      "url": "https://github.com/VoidLight00/deo-harness",
+      "website_url": null,
+      "rank": null,
+      "score": 5,
+      "comments": null,
+      "stars": 5,
+      "replies": null,
+      "created_at": "2026-06-12T04:34:07Z",
+      "launched_at": null,
+      "topics": [
+        "agent-orchestration",
+        "claude-code",
+        "fable-5",
+        "harness",
+        "llm-agents"
+      ],
+      "raw_ref": {
+        "full_name": "VoidLight00/deo-harness",
+        "language": null,
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T05:16:28Z",
+        "stargazers_count": 5,
+        "watchers_count": 5,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "dragosroua/compaction-tetris",
+      "name": "compaction-tetris",
+      "tagline": "Tetris game running in your shell during LLM compaction",
+      "url": "https://github.com/dragosroua/compaction-tetris",
+      "website_url": "https://dragosroua.com/attention-harvesting-what-you-do-while-your-llm-works/",
+      "rank": null,
+      "score": 4,
+      "comments": null,
+      "stars": 4,
+      "replies": null,
+      "created_at": "2026-06-12T03:03:19Z",
+      "launched_at": null,
+      "topics": [
+        "claude-code",
+        "llm",
+        "shell"
+      ],
+      "raw_ref": {
+        "full_name": "dragosroua/compaction-tetris",
+        "language": "Python",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T04:19:54Z",
+        "stargazers_count": 4,
+        "watchers_count": 4,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "cha0upup/LeoAI",
+      "name": "LeoAI",
+      "tagline": "AI 驱动的后渗透综合管理平台，深度集成 LLM Agent，175 个工具 + 21 个技能，开箱即用。",
+      "url": "https://github.com/cha0upup/LeoAI",
+      "website_url": null,
+      "rank": null,
+      "score": 4,
+      "comments": null,
+      "stars": 4,
+      "replies": null,
+      "created_at": "2026-06-12T06:48:10Z",
+      "launched_at": null,
+      "topics": [],
+      "raw_ref": {
+        "full_name": "cha0upup/LeoAI",
+        "language": "Java",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T07:13:22Z",
+        "stargazers_count": 4,
+        "watchers_count": 4,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "kunchenguid/firstmate",
+      "name": "firstmate",
+      "tagline": "Talk to one agent. Ship with a crew.",
+      "url": "https://github.com/kunchenguid/firstmate",
+      "website_url": null,
+      "rank": null,
+      "score": 4,
+      "comments": null,
+      "stars": 4,
+      "replies": null,
+      "created_at": "2026-06-12T03:21:10Z",
+      "launched_at": null,
+      "topics": [],
+      "raw_ref": {
+        "full_name": "kunchenguid/firstmate",
+        "language": "Shell",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T06:30:17Z",
+        "stargazers_count": 4,
+        "watchers_count": 4,
+        "open_issues_count": 0
+      }
+    },
+    {
+      "source_id": "amgadelgamal/claude-council",
+      "name": "claude-council",
+      "tagline": "LLM Council for Claude Code with zero API keys — parallel Claude subagents debate, anonymously peer-review, and synthesize an answer, all on your existing subscription",
+      "url": "https://github.com/amgadelgamal/claude-council",
+      "website_url": null,
+      "rank": null,
+      "score": 4,
+      "comments": null,
+      "stars": 4,
+      "replies": null,
+      "created_at": "2026-06-12T00:22:05Z",
+      "launched_at": null,
+      "topics": [
+        "claude",
+        "claude-code",
+        "claude-code-skill",
+        "llm-council",
+        "multi-agent",
+        "subagents"
+      ],
+      "raw_ref": {
+        "full_name": "amgadelgamal/claude-council",
+        "language": "JavaScript",
+        "default_branch": "main",
+        "pushed_at": "2026-06-12T00:22:07Z",
+        "stargazers_count": 4,
+        "watchers_count": 4,
+        "open_issues_count": 0
+      }
+    }
+  ]
+}

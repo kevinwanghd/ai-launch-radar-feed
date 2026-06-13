@@ -1,0 +1,15 @@
+{
+  "source": "x",
+  "date": "2026-06-13",
+  "captured_at": "2026-06-13T09:25:46.142Z",
+  "status": "degraded",
+  "count": 0,
+  "notes": [
+    "query:start:just launched AI",
+    "query:ok:just launched AI:0",
+    "query:start:built this AI",
+    "query:ok:built this AI:0",
+    "No trustworthy launch-intent tweets found"
+  ],
+  "items": []
+}

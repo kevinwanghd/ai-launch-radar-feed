@@ -1,0 +1,12 @@
+{
+  "source": "producthunt",
+  "date": "2026-07-30",
+  "captured_at": "2026-07-30T08:38:32.124Z",
+  "status": "unavailable",
+  "count": 0,
+  "notes": [
+    "Product Hunt returned HTTP 429.",
+    "reason_code:ph_http_error"
+  ],
+  "items": []
+}

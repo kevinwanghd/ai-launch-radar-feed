@@ -1,0 +1,12 @@
+{
+  "source": "producthunt",
+  "date": "2026-08-13",
+  "captured_at": "2026-08-13T07:43:49.148Z",
+  "status": "unavailable",
+  "count": 0,
+  "notes": [
+    "Product Hunt returned HTTP 403.",
+    "reason_code:ph_http_error"
+  ],
+  "items": []
+}
